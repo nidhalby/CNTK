@@ -3,6 +3,7 @@ import os
 import math
 import functools
 import numpy as np
+from io import open
 
 class WordFreq:
   def __init__(self, word, id, freq):

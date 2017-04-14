@@ -3,6 +3,7 @@ import os
 import cntk.device as device
 import numpy as np
 import math
+from io import open
 try:
   from .utils import *
   from .reasonet import *

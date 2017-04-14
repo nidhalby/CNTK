@@ -6,6 +6,8 @@ import sys
 import tarfile
 import zipfile
 import shutil
+from io import open
+
 try:
   from .wordvocab import *
 except Exception:

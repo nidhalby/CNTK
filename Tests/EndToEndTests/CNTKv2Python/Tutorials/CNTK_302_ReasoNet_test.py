@@ -26,6 +26,6 @@ def test_cntk_302_ReasoNet_Training(nb):
     print(eval_acc)
     m = re.search('^Evaluation Acc: (?P<metric>\d+\.\d+)', eval_acc, re.M)
     metrics += [float(m.group('metric'))]
-    expectedMetrics = [0.334, 0.328]
+    expectedMetrics = [0.336, 0.32]
     # TODO tighten tolerances
     assert numpy.allclose(expectedMetrics, metrics, atol=0.01)

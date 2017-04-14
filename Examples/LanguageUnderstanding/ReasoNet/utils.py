@@ -10,6 +10,7 @@ from cntk.ops import input, sequence, reduce_sum, \
 from cntk.losses import cosine_distance
 from cntk.internal import _as_tuple, sanitize_input
 from cntk.initializer import uniform, glorot_uniform
+from io import open
 
 try:
   from wordvocab import *
