@@ -49,7 +49,7 @@ def merge_files(folder, target):
         for k in range(8, len(content)):
           entities += [ content[k].strip() ]
         with open(target, 'a', encoding='utf-8') as output:
-          output.write("{0}\t{1}\t{2}\t{3}\n".format(query, answer, context, "\t".join(entities)))
+          output.write(u"{0}\t{1}\t{2}\t{3}\n".format(query, answer, context, "\t".join(entities)))
     count+=1
     if count%1000==0:
       sys.stdout.write(".")

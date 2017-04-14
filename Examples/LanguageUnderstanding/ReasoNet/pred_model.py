@@ -56,7 +56,7 @@ def pred_cnn_model(model_path, output):
     ans = np.nonzero(pred)
     with open(output, mode='a', encoding='utf-8') as outf:
       for id in ans[1]:
-        outf.write("{0}\t{1}\n".format(instance_id, entity_table.lookup_by_id(id)))
+        outf.write(u"{0}\t{1}\n".format(instance_id, entity_table.lookup_by_id(id)))
         instance_id += 1
     i += mb[context_stream].num_samples
     samples = mb[context_stream].num_sequences

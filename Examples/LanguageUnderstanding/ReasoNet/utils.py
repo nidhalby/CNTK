@@ -43,7 +43,7 @@ class logger:
     if toconsole:
       print(message)
     with open(logger.__logfile, 'a', encoding='utf-8') as logf:
-      logf.write("{}| {}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
+      logf.write(u"{}| {}\n".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), message))
 
 class uniform_initializer:
   def __init__(self, scale=1, bias=0, seed=0):
