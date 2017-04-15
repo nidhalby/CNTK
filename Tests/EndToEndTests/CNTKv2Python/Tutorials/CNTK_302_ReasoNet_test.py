@@ -14,6 +14,7 @@ notebook = os.path.join(abs_path, "..", "..", "..", "..", "Tutorials", "CNTK_302
 notebook_deviceIdsToRun = [0]
 
 def test_cntk_302_ReasoNet_Training(nb):
+  if sys.version_info >= (3,):
     errors = [output for cell in nb.cells if 'outputs' in cell
               for output in cell['outputs'] if output.output_type == "error"]
     print(errors)
