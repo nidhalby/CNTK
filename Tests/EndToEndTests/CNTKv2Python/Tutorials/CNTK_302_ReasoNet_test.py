@@ -20,10 +20,9 @@ def test_cntk_302_ReasoNet_Training(nb):
     assert errors == []
     metrics = []
     train_acc = nb.cells[37].outputs[0]['text']
-    print(train_acc)
     m = re.search('^Evaluation Acc: (?P<metric>\d+\.\d+)', train_acc, re.M)
+    metrics += [float(m.group('metric'))]
     eval_acc = nb.cells[42].outputs[0]['text']
-    print(eval_acc)
     m = re.search('^Evaluation Acc: (?P<metric>\d+\.\d+)', eval_acc, re.M)
     metrics += [float(m.group('metric'))]
     expectedMetrics = [0.336, 0.32]
