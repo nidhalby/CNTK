@@ -12,6 +12,7 @@ except Exception:
   from reasonet import *
   from prepare_cnn_data import prepare_data
 from cntk import load_model
+import time
 
 module_path = os.path.abspath(os.path.dirname(os.path.abspath(__file__)))
 def test_cnn_model(model_path):  
@@ -45,7 +46,7 @@ def test_cnn_model(model_path):
   acc_sum = 0
   samples_sum = 0
   i = 0
-  start = os.times()
+  start = time.time()
   while i<test_size:
     mbs = min(test_size - i, minibatch_size)
     mb = test_data.next_minibatch(mbs, bind)
@@ -59,8 +60,8 @@ def test_cnn_model(model_path):
     loss_sum += loss_value
     sys.stdout.write('.')
     sys.stdout.flush()
-  end = os.times()
-  total = end.elapsed - start.elapsed
+  end = time.time()
+  total = end - start
   print("")
   print("Evaluation acc: {0}, loss: {1}, samples: {2} in {3} seconds".format(acc_sum/samples_sum, loss_sum/samples_sum, samples_sum, total))
 
